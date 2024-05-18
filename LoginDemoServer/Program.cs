@@ -24,7 +24,7 @@ namespace LoginDemoServer
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.IdleTimeout = TimeSpan.FromSeconds(3000);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
@@ -54,6 +54,7 @@ namespace LoginDemoServer
             #endregion 
 
             app.MapControllers();
+            app.UseStaticFiles();
 
             app.Run();
         }
