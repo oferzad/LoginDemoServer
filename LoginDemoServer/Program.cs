@@ -25,7 +25,7 @@ namespace LoginDemoServer
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(3000);
-                options.Cookie.HttpOnly = true;
+                options.Cookie.HttpOnly = false;
                 options.Cookie.IsEssential = true;
             });
             #endregion
